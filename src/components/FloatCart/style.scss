@@ -4,10 +4,10 @@
   right: -450px;
   width: 450px;
   height: 100%;
-  background-color: #1b1a20;
+  background-color: #666666;
   box-sizing: border-box;
 
-  transition: right 0.2s;
+  transition: right .2s;
 
   &--open {
     right: 0;
@@ -17,7 +17,7 @@
     width: 50px;
     height: 50px;
     color: #ececec;
-    background-color: #1b1a20;
+    background-color: #666666;
     text-align: center;
     line-height: 50px;
     position: absolute;
@@ -44,7 +44,7 @@
 
     &--float-cart-closed {
       position: absolute;
-      background-color: #000;
+      background-color: #e10098;
       background-size: 50%;
       left: -60px;
       width: 60px;
@@ -63,14 +63,14 @@
       height: 18px;
       color: #0c0b10;
       font-weight: bold;
-      font-size: 0.7em;
+      font-size: .7em;
       text-align: center;
       line-height: 18px;
       border-radius: 50%;
-      background-color: #eabf00;
+      background-color: #d8d8d8;
       position: absolute;
       bottom: -5px;
-      right: 0px;
+      right: 0;
     }
   }
 
@@ -103,7 +103,7 @@
       box-sizing: border-box;
       padding: 5%;
 
-      transition: background-color 0.2s, opacity 0.2s;
+      transition: background-color .2s, opacity .2s;
 
       &::before {
         content: '';
@@ -117,17 +117,18 @@
 
       &--mouseover {
         background: #0c0b10;
+
         .shelf-item__details {
-          .title,
-          .desc {
+          .desc,
+          .title {
             text-decoration: line-through;
-            opacity: 0.6;
+            opacity: .6;
           }
         }
 
         .shelf-item__price {
           text-decoration: line-through;
-          opacity: 0.6;
+          opacity: .6;
         }
       }
 
@@ -149,9 +150,9 @@
         }
       }
 
-      &__thumb,
       &__details,
-      &__price {
+      &__price,
+      &__thumb {
         display: inline-block;
         vertical-align: middle;
       }
@@ -166,6 +167,7 @@
           height: auto;
         }
       }
+
       &__details {
         width: 57%;
 
@@ -175,22 +177,24 @@
         }
 
         .desc {
-          color: #5b5a5e;
+          color: #ececec;
           margin: 0;
         }
       }
+
       &__price {
-        color: #eabf00;
+        color: #d8d8d8;
         text-align: right;
         width: 25%;
       }
+
       .change-product-button {
         color: #b7b7b7;
         border: 0;
-        background-color: #000;
+        background-color: #e10098;
         width: 25px;
         height: 25px;
-        
+
         &:disabled {
           opacity: .2;
         }
@@ -206,7 +210,7 @@
     width: 100%;
     height: 200px;
     z-index: 2;
-    background-color: #1b1a20;
+    background-color: #666666;
 
     &::before {
       content: '';
@@ -221,7 +225,7 @@
 
     .sub,
     .sub-price {
-      color: #5b5a5e;
+      color: #ececec;
       vertical-align: middle;
       display: inline-block;
     }
@@ -234,13 +238,13 @@
       width: 80%;
       text-align: right;
 
-      &__val,
-      &__installment {
+      &__installment,
+      &__val {
         margin: 0;
       }
 
       &__val {
-        color: #eabf00;
+        color: #d8d8d8;
         font-size: 22px;
       }
     }
@@ -254,15 +258,14 @@
       margin-top: 40px;
       cursor: pointer;
 
-      transition: background-color 0.2s;
+      transition: background-color .2s;
 
       &:hover {
-        background-color: #000;
+        background-color: #e10098;
       }
     }
   }
 }
-
 
 /* MAC scrollbar para desktop*/
 @media screen and (min-width: 640px) {
@@ -272,6 +275,7 @@
     background-color: rgba(0, 0, 0, 0.2);
     padding: 10px;
   }
+
   .float-cart__content::-webkit-scrollbar-thumb {
     border-radius: 4px;
     background-color: #0c0b10;

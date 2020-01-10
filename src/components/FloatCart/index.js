@@ -53,7 +53,7 @@ class FloatCart extends Component {
 
     cartProducts.forEach(cp => {
       if (cp.id === product.id) {
-        cp.quantity += product.quantity;
+        cp.quantity = cp.quantity <= 4 ? cp.quantity + product.quantity : cp.quantity + 0
         productAlreadyInCart = true;
       }
     });
@@ -149,7 +149,7 @@ class FloatCart extends Component {
             <span className="bag">
               <span className="bag__quantity">{cartTotal.productQuantity}</span>
             </span>
-            <span className="header-title">Cart</span>
+            <span className="header-title">Carrito</span>
           </div>
 
           <div className="float-cart__shelf-container">
@@ -174,7 +174,7 @@ class FloatCart extends Component {
               <small className="sub-price__installment">
                 {!!cartTotal.installments && (
                   <span>
-                    {`OR UP TO ${cartTotal.installments} x ${
+                    {`O HASTA ${cartTotal.installments} x ${
                       cartTotal.currencyFormat
                     } ${formatPrice(
                       cartTotal.totalPrice / cartTotal.installments,
@@ -185,7 +185,7 @@ class FloatCart extends Component {
               </small>
             </div>
             <div onClick={() => this.proceedToCheckout()} className="buy-btn">
-              Checkout
+              finalizar compra
             </div>
           </div>
         </div>

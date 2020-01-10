@@ -9,7 +9,11 @@ import { addProduct } from '../../../../services/cart/actions';
 const Product = ({ product, addProduct }) => {
   product.quantity = 1;
 
-  let formattedPrice = formatPrice(product.price, product.currencyId);
+  const existPromoPrice = product.promoPrice !== undefined
+
+  const getPrice = existPromoPrice && product.promoPrice < product.price ? product.promoPrice : product.price
+
+  let formattedPrice = formatPrice(getPrice, product.currencyId);
 
   let productInstallment;
 
@@ -18,7 +22,7 @@ const Product = ({ product, addProduct }) => {
 
     productInstallment = (
       <div className="installment">
-        <span>or {product.installments} x</span>
+        <span>ó {product.installments} x</span>
         <b>
           {product.currencyFormat}
           {formatPrice(installmentPrice, product.currencyId)}
@@ -27,14 +31,18 @@ const Product = ({ product, addProduct }) => {
     );
   }
 
+  console.log(product)
+
   return (
     <div
       className="shelf-item"
-      onClick={() => addProduct(product)}
+      onClick={() => {
+        addProduct(product)
+      }}
       data-sku={product.sku}
     >
       {product.isFreeShipping && (
-        <div className="shelf-stopper">Free shipping</div>
+        <span className="shelf-stopper" />
       )}
       <Thumb
         classes="shelf-item__thumb"
@@ -50,7 +58,7 @@ const Product = ({ product, addProduct }) => {
         </div>
         {productInstallment}
       </div>
-      <div className="shelf-item__buy-btn">Add to cart</div>
+      <div className="shelf-item__buy-btn">Agregar al carrito</div>
     </div>
   );
 };

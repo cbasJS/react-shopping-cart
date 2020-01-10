@@ -10,8 +10,7 @@
 
     .products-found {
       float: left;
-      margin: 0;
-      margin-top: 8px;
+      margin: 8px 0 0;
     }
 
     .sort {
@@ -48,18 +47,22 @@
       border: 1px solid #eee;
 
       .shelf-item__buy-btn {
-        background-color: #eabf00;
+        background-color: #d8d8d8;
+        color: #666;
       }
     }
 
     .shelf-stopper {
       position: absolute;
-      color: #ececec;
+      width: 25px;
+      height: 25px;
       top: 10px;
       right: 10px;
       padding: 5px;
-      font-size: 0.6em;
-      background-color: #1b1a20;
+      background-image: url('../../static/free-shipping-icon.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
       cursor: default;
     }
 
@@ -78,7 +81,7 @@
         content: '';
         width: 20px;
         height: 2px;
-        background-color: #eabf00;
+        background-color: #d8d8d8;
         position: absolute;
         bottom: 0;
         left: 50%;
@@ -102,14 +105,14 @@
     }
 
     &__buy-btn {
-      background-color: #1b1a20;
+      background-color: #666666;
       color: #fff;
       padding: 15px 0;
       margin-top: 10px;
       cursor: pointer;
       // border-bottom: 2px solid #151419;
 
-      transition: background-color 0.2s;
+      transition: background-color .2s;
     }
   }
 }

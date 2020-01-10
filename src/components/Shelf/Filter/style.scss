@@ -4,6 +4,7 @@
 
   .star-button-container {
     text-align: center;
+
     small {
       color: #aaa;
       margin-bottom: 8px;
@@ -12,7 +13,7 @@
   }
 
   .instagram {
-    margin: 20px auto 0 auto;
+    margin: 20px auto 0;
     text-align: center;
 
     &-icon {
@@ -22,7 +23,7 @@
       background-repeat: no-repeat;
       background-size: contain;
       background-position: center;
-      opacity: 0.3;
+      opacity: .3;
       display: inline-block;
       vertical-align: middle;
       margin-right: 5px;
@@ -33,7 +34,7 @@
       text-decoration: none;
 
       &:hover {
-        color: #eabf00;
+        color: #d8d8d8;
       }
     }
   }
@@ -58,7 +59,7 @@
       user-select: none;
       width: 35px;
       height: 35px;
-      font-size: 0.8em;
+      font-size: .8em;
       margin-bottom: 8px;
       margin-right: 8px;
       border-radius: 50%;
@@ -67,12 +68,12 @@
 
       /* On mouse-over, add a grey background color */
       &:hover input ~ .checkmark {
-        border: 1px solid #1b1a20;
+        border: 1px solid #666666;
       }
 
       /* When the checkbox is checked, add a blue background */
       & input:checked ~ .checkmark {
-        background-color: #1b1a20;
+        background-color: #666666;
         color: #ececec;
       }
 
@@ -94,11 +95,11 @@
         left: 0;
         width: 35px;
         height: 35px;
-        font-size: 0.8em;
+        font-size: .8em;
         border-radius: 50%;
         line-height: 35px;
         text-align: center;
-        color: #1b1a20;
+        color: #666666;
         background-color: #ececec;
 
         border: 1px solid transparent;

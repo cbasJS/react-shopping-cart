@@ -31,7 +31,7 @@ class CartProduct extends Component {
     const { changeProductQuantity } = this.props;
     const { product } = this.state;
     product.quantity = product.quantity + 1;
-    changeProductQuantity(product);
+    if(product.quantity <= 5) changeProductQuantity(product);
   }
 
   handleOnDecrease = () => {
@@ -68,7 +68,7 @@ class CartProduct extends Component {
           <p className="title">{product.title}</p>
           <p className="desc">
             {`${product.availableSizes[0]} | ${product.style}`} <br />
-            Quantity: {product.quantity}
+            Cantidad: {product.quantity}
           </p>
         </div>
         <div className="shelf-item__price">
